@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    application
 }
 
 group = "MMU"
@@ -16,4 +17,15 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+application {
+    // Specify the main class without the file extension
+    mainClass.set("MMU.WeatherApp") // Adjusted to the correct package and class name
+}
+
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "MMU.WeatherApp" // Specify the main class in the manifest
+    }
 }
