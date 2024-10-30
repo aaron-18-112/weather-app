@@ -3,11 +3,11 @@ package MMU;
 public class CityWeather {
 
     //Private instance variables which can be accessed within the CityWeather class
-    private String cityName;
-    private double temperature;
-    private int humidity;
-    private String description;
-    private String forecast;
+    private final String cityName;
+    private final double temperature;
+    private final int humidity;
+    private final String description;
+    private final String forecast;
 
     //Constructor
     public CityWeather(String cityName, double temperature, int humidity, String description, String forecast) {

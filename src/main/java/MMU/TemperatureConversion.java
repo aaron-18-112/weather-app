@@ -10,6 +10,7 @@ public class TemperatureConversion {
     }
 
     public static double celsiusToFahrenheit(double celsius) {
-        return (celsius * 9.0 / 5) + 32;
+        double roundedCelsius = Math.round(celsius * 100.00) / 100.00;
+        return (roundedCelsius * 9.0 / 5) + 32;
     }
 }
