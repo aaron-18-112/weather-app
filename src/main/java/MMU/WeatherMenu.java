@@ -13,7 +13,7 @@ public class WeatherMenu {
         System.out.println("Which city would you like to see weather data for?");
         String cityName = weatherMenuSc.nextLine();
 
-       //Using an if-else statement for scalability of data
+        //Using an if-else statement for scalability of data
 
         for (CityWeather cityWeather : cities) {
             if (cityWeather.getCityName().equalsIgnoreCase(cityName)) {
@@ -23,6 +23,6 @@ public class WeatherMenu {
         }
 
         System.out.println("Invalid city name, Please try again.");
-        return displayWeatherMenu(cities);
+        return displayWeatherMenu(cities); //Recurse if invalid city names
     }
 }
