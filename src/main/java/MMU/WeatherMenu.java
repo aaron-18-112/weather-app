@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class WeatherMenu {
 
-    // By returning CityWeather object it can be returned which can be used by the calling code
     public static CityWeather displayWeatherMenu(List<CityWeather> cities) {
 
         Scanner weatherMenuSc = new Scanner(System.in);

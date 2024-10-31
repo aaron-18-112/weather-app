@@ -13,28 +13,27 @@ public class MainMenu {
 
         while (runMenu) {
 
-            System.out.println();
-            System.out.println("1. Convert the temperature to Fahrenheit");
-            System.out.println("2. See weather data for another city");
-            System.out.println("3. Exit");
+            showMenuOptions();
             int input = menuSc.nextInt();
+            menuSc.nextLine();
 
             switch (input) {
                 case 1: //Temperature Conversion Method
                     double fahrenheitTemp = TemperatureConversion.celsiusToFahrenheit(currentCityWeather.getTemperature());
-                    double roundedFahrenheitTemp = Math.round(fahrenheitTemp * 100.0) / 100.0;
-                    System.out.println();
-                    System.out.println("Temperature in Fahrenheit: " + roundedFahrenheitTemp + "F");
-                    System.out.println();
+                    System.out.printf("Temperature in Fahrenheit: %.2fF\n", fahrenheitTemp);
+                    //printf formats the decimal to 2.dp. \n adds a new line, and fahrenheitTemp is the value that is used in the format
+                    promptEnterToContinue(menuSc);
                     break;
 
                 case 2: //Another Menu to choose Weather Data from another city - Build a WeatherMenuClass
                     currentCityWeather = WeatherMenu.displayWeatherMenu(cities);
+                    promptEnterToContinue(menuSc);
                     break;
 
                 case 3: //Build Exit
                     System.out.println("Exiting Program");
                     runMenu = false;
+                    promptEnterToContinue(menuSc);
                     break;
 
                 default:
@@ -48,4 +47,17 @@ public class MainMenu {
         menuSc.close();
 
     }
+    private static void showMenuOptions () {
+        System.out.println("Would you like to:");
+        System.out.println("1. Convert the temperature to Fahrenheit");
+        System.out.println("2. See weather data for another city");
+        System.out.println("3. Exit");
+    }
+
+    private static void promptEnterToContinue (Scanner scanner) {
+        System.out.println("Press enter to continue");
+        scanner.nextLine();
+    }
 }
+
+
