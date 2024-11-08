@@ -7,6 +7,7 @@ public class WeatherData {
 
     public static List<CityWeather> cityWeatherList = new ArrayList<>();
 
+    //Weather data for major cities, which is passed into other classes
     static {
         cityWeatherList.add(new CityWeather("Manchester", 12.5, 80, "Cloudy", "Chance of rain tomorrow"));
         cityWeatherList.add(new CityWeather("New York", 22.1, 60, "Sunny", "Clear skies tomorrow"));
