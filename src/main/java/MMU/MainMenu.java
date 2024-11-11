@@ -54,7 +54,7 @@ public class MainMenu {
     }
 
     //Method to call the menu options
-    private static void showMenuOptions () {
+    private static void showMenuOptions() {
         System.out.println("Would you like to:");
         System.out.println("1. Convert the temperature to Fahrenheit");
         System.out.println("2. See weather data for another city");
@@ -62,7 +62,7 @@ public class MainMenu {
     }
 
     //Method to prompt users to tap enter
-    private static void promptEnterToContinue (Scanner scanner) {
+    private static void promptEnterToContinue(Scanner scanner) {
         System.out.println("Press enter to continue");
         scanner.nextLine();
     }

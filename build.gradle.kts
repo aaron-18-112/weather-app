@@ -28,7 +28,7 @@ tasks.jar {
     manifest {
         attributes["Main-Class"] = "MMU.WeatherApp" // Specify the main class in the manifest
     }
-    from ({
+    from({
         configurations.runtimeClasspath.get().filter { it.exists() }.map { if (it.isDirectory) it else zipTree(it) }
     })
 }
