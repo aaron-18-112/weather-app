@@ -12,12 +12,17 @@ public class WeatherApp {
         List<CityWeather> cities = WeatherData.cityWeatherList;
         CityWeather currentCityWeather = cities.get(0); //Displays weather data for Manchester
 
-        System.out.println("Hi! We have located your nearest major city as Manchester... \n" +
-                "This is the data we have found:");
+        System.out.println("""
+                Hi! We have located your nearest major city as Manchester...
+                This is the data we have found:
+                """);
 
-        System.out.println();
+        //Used a text block in order to write multi-line strings without needing to concatenate
+        // """ Encapsulates the text block
+
         currentCityWeather.displayWeather();
-        System.out.println("Press enter to continue"); //Prompt to user
+        System.out.println("\nPress enter to continue");
+        //Prompt to user & used \n notation in order to save writing out System.out.println()
         sc.nextLine();
 
         MainMenu.displayMenu(cities, currentCityWeather);
