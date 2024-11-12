@@ -54,6 +54,7 @@ public class MainMenu {
     }
 
     //Method to call the menu options
+    //This method is a static as it needs to be called often
     private static void showMenuOptions() {
         System.out.println("Would you like to:");
         System.out.println("1. Convert the temperature to Fahrenheit");
@@ -62,6 +63,7 @@ public class MainMenu {
     }
 
     //Method to prompt users to tap enter
+    //This method is a static as it needs to be called often
     private static void promptEnterToContinue(Scanner scanner) {
         System.out.println("Press enter to continue");
         scanner.nextLine();
