@@ -5,6 +5,7 @@ import java.util.List;
 
 public class WeatherData {
 
+    //Data needs to be readily available so is statically loaded
     public static List<CityWeather> cityWeatherList = new ArrayList<>();
 
     //Weather data for major cities, which is passed into other classes

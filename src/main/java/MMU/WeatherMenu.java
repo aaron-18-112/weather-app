@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class WeatherMenu {
 
-    public static CityWeather displayWeatherMenu(List<CityWeather> cities) {
+    public CityWeather displayWeatherMenu(List<CityWeather> cities) {
 
         Scanner weatherMenuSc = new Scanner(System.in);
 
