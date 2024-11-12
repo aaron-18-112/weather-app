@@ -23,21 +23,19 @@ public class CityWeather {
 
 //Getters provide access to private variables of the CityWeather class.
 //They allow other classes to retrieve these values while keeping the variables themselves private - Security
+//I have also made getters for humidity, description, and forecast, in case needed in the future
 
     public String getCityName() {
         return cityName;
     }
 
-
     public double getTemperature() {
         return temperature;
     }
 
-
     public int getHumidity() {
         return humidity;
     }
-
 
     public String getDescription() {
         return description;
