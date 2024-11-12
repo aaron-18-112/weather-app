@@ -6,6 +6,7 @@ package MMU;
 public class CityWeather {
 
     //Private instance variables which can be accessed within the CityWeather class
+    //Final variables are read-only
     private final String cityName; //Name of the city
     private final double temperature; //Temperature in Celsius
     private final int humidity; //Humidity as a percentage
