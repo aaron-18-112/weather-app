@@ -7,5 +7,11 @@ Built out methods where possible in order to maintain structure and minimise cod
 Have managed to keep the weather data separate in order to implement CSV functionality or build the data out
 
 TODO
-Implement a forecast - Inheritance
+Implement a world forecast, pulls the daily forecast from each instance together - Inheritance
 Potentially some weather graphics (ASCI)
+Write Tests - JUnit
+
+Potential:
+Polymorphism: Depending on the type of weather data you need to handle (e.g., temperature, precipitation, wind, etc.),
+you can create different subclasses of the Weather class that override the common methods to provide specialized functionality.
+This will allow you to easily add new types of weather data without modifying the existing code.

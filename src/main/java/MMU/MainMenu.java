@@ -5,6 +5,22 @@ import java.util.Scanner;
 
 public class MainMenu {
 
+    //Method to call the menu options
+    //This method is a static as it needs to be called often
+    private static void showMenuOptions() {
+        System.out.println("Would you like to:");
+        System.out.println("1. Convert the temperature to Fahrenheit");
+        System.out.println("2. See weather data for another city");
+        System.out.println("3. Exit");
+    }
+
+    //Method to prompt users to tap enter
+    //This method is a static as it needs to be called often
+    private static void promptEnterToContinue(Scanner scanner) {
+        System.out.println("Press enter to continue");
+        scanner.nextLine();
+    }
+
     public void displayMenu(List<CityWeather> cities, CityWeather currentCityWeather) {
 
         //Initialising a menu scanner
@@ -54,22 +70,6 @@ public class MainMenu {
         System.out.println("Goodbye!");
         menuSc.close();
 
-    }
-
-    //Method to call the menu options
-    //This method is a static as it needs to be called often
-    private static void showMenuOptions() {
-        System.out.println("Would you like to:");
-        System.out.println("1. Convert the temperature to Fahrenheit");
-        System.out.println("2. See weather data for another city");
-        System.out.println("3. Exit");
-    }
-
-    //Method to prompt users to tap enter
-    //This method is a static as it needs to be called often
-    private static void promptEnterToContinue(Scanner scanner) {
-        System.out.println("Press enter to continue");
-        scanner.nextLine();
     }
 }
 
