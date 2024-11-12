@@ -5,7 +5,21 @@ import java.util.Scanner;
 
 public class MainMenu {
 
-    public static void displayMenu(List<CityWeather> cities, CityWeather currentCityWeather) {
+    //Method to call the menu options
+    private static void showMenuOptions() {
+        System.out.println("Would you like to:");
+        System.out.println("1. Convert the temperature to Fahrenheit");
+        System.out.println("2. See weather data for another city");
+        System.out.println("3. Exit");
+    }
+
+    //Method to prompt users to tap enter
+    private static void promptEnterToContinue(Scanner scanner) {
+        System.out.println("Press enter to continue");
+        scanner.nextLine();
+    }
+
+    public void displayMenu(List<CityWeather> cities, CityWeather currentCityWeather) {
 
         //Initialising a menu scanner
         Scanner menuSc = new Scanner(System.in);
@@ -21,16 +35,21 @@ public class MainMenu {
 
             switch (input) {
                 case 1: //Temperature Conversion Method
-                    double fahrenheitTemp = TemperatureConversion.celsiusToFahrenheit(currentCityWeather.getTemperature());
+                    TemperatureConversion temperatureConversion = new TemperatureConversion();
+                    //Creating an instance/object of Temperature Conversion
+                    double fahrenheitTemp = temperatureConversion.celsiusToFahrenheit(currentCityWeather.getTemperature());
+                    //Calling my method from the temperatureConversion object
                     System.out.printf("Temperature in Fahrenheit: %.2fF\n", fahrenheitTemp);
                     //printf formats the decimal to 2.dp. \n adds a new line, and fahrenheitTemp is the value that is used in the format
                     promptEnterToContinue(menuSc); //Method that uses the same scanner, to prompt user input
                     break;
 
                 case 2: //Another Menu to choose Weather Data from another city
-                    currentCityWeather = WeatherMenu.displayWeatherMenu(cities);
+                    WeatherMenu weatherMenu = new WeatherMenu();
+                    //Creating an instance/object of Weather Menu
+                    currentCityWeather = weatherMenu.displayWeatherMenu(cities);
                     //Define currentCityWeather to use as context for other methods
-                    //Calls displayWeatherMenu from the WeatherMenu class
+                    //Calls the displayWeatherMenu method from the weatherMenu object
                     //cities variable (ArrayList) is being passed as an argument into displayWeatherMenu
                     promptEnterToContinue(menuSc);
                     break;
@@ -51,20 +70,6 @@ public class MainMenu {
         System.out.println("Goodbye!");
         menuSc.close();
 
-    }
-
-    //Method to call the menu options
-    private static void showMenuOptions () {
-        System.out.println("Would you like to:");
-        System.out.println("1. Convert the temperature to Fahrenheit");
-        System.out.println("2. See weather data for another city");
-        System.out.println("3. Exit");
-    }
-
-    //Method to prompt users to tap enter
-    private static void promptEnterToContinue (Scanner scanner) {
-        System.out.println("Press enter to continue");
-        scanner.nextLine();
     }
 }
 

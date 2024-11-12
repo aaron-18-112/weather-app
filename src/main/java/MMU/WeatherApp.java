@@ -20,7 +20,10 @@ public class WeatherApp {
         System.out.println("Press enter to continue"); //Prompt to user
         sc.nextLine();
 
-        MainMenu.displayMenu(cities, currentCityWeather);
+        MainMenu mainMenu = new MainMenu();
+        //Creating an instance/object of MainMenu to dynamically load in when needed
+        mainMenu.displayMenu(cities, currentCityWeather);
+        //Call the displayMenu method from my mainMenu object
 
     }
 
