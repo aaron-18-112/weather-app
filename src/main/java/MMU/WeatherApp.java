@@ -25,8 +25,11 @@ public class WeatherApp {
         //Prompt to user & used \n notation in order to save writing out System.out.println()
         sc.nextLine();
 
-        MainMenu.displayMenu(cities, currentCityWeather);
+        MainMenu mainMenu = new MainMenu();
+        //Creating an instance/object of MainMenu
 
+        mainMenu.displayMenu(cities, currentCityWeather);
+        //Calling the displayMenu method from the mainMenu Object
     }
 
 }

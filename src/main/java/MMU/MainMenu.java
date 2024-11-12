@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class MainMenu {
 
-    public static void displayMenu(List<CityWeather> cities, CityWeather currentCityWeather) {
+    public void displayMenu(List<CityWeather> cities, CityWeather currentCityWeather) {
 
         //Initialising a menu scanner
         Scanner menuSc = new Scanner(System.in);
@@ -21,16 +21,19 @@ public class MainMenu {
 
             switch (input) {
                 case 1: //Temperature Conversion Method
-                    double fahrenheitTemp = TemperatureConversion.celsiusToFahrenheit(currentCityWeather.getTemperature());
+                    TemperatureConversion temperatureConversion = new TemperatureConversion();
+                    double fahrenheitTemp = temperatureConversion.celsiusToFahrenheit(currentCityWeather.getTemperature());
+                    //Uses the temperature conversion method from the temperatureConversion object created
                     System.out.printf("Temperature in Fahrenheit: %.2fF\n", fahrenheitTemp);
                     //printf formats the decimal to 2.dp. \n adds a new line, and fahrenheitTemp is the value that is used in the format
                     promptEnterToContinue(menuSc); //Method that uses the same scanner, to prompt user input
                     break;
 
                 case 2: //Another Menu to choose Weather Data from another city
-                    currentCityWeather = WeatherMenu.displayWeatherMenu(cities);
+                    WeatherMenu weatherMenu = new WeatherMenu();
+                    currentCityWeather = weatherMenu.displayWeatherMenu(cities);
                     //Define currentCityWeather to use as context for other methods
-                    //Calls displayWeatherMenu from the WeatherMenu class
+                    //Calls displayWeatherMenu from the weatherMenu object
                     //cities variable (ArrayList) is being passed as an argument into displayWeatherMenu
                     promptEnterToContinue(menuSc);
                     break;
