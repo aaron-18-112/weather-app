@@ -21,6 +21,7 @@ public class WeatherApp {
         // """ Encapsulates the text block
 
         currentCityWeather.displayWeather();
+        //Displays the weather data for Manchester
         System.out.println("\nPress enter to continue");
         //Prompt to user & used \n notation in order to save writing out System.out.println()
         sc.nextLine();

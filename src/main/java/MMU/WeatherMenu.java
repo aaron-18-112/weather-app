@@ -23,5 +23,6 @@ public class WeatherMenu {
 
         System.out.println("Invalid city name, Please try again.");
         return displayWeatherMenu(cities); //Recurse if invalid city names
+
     }
 }
