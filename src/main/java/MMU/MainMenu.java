@@ -11,7 +11,8 @@ public class MainMenu {
         System.out.println("Would you like to:");
         System.out.println("1. Convert the temperature to Fahrenheit");
         System.out.println("2. See weather data for another city");
-        System.out.println("3. Exit");
+        System.out.println("3. See the World Forecast");
+        System.out.println("4. Exit");
     }
 
     //Method to prompt users to tap enter
@@ -32,39 +33,54 @@ public class MainMenu {
         while (runMenu) {
 
             showMenuOptions(); //Method to show options to avoid repetition
-            int input = menuSc.nextInt(); //User Input
-            menuSc.nextLine();
+            try {
+                int input = menuSc.nextInt(); //User Input
+                menuSc.nextLine();
 
-            switch (input) {
-                case 1: //Temperature Conversion Method
-                    TemperatureConversion temperatureConversion = new TemperatureConversion();
-                    double fahrenheitTemp = temperatureConversion.celsiusToFahrenheit(currentCityWeather.getTemperature());
-                    //Uses the temperature conversion method from the temperatureConversion object created
-                    System.out.printf("Temperature in Fahrenheit: %.2fF\n", fahrenheitTemp);
-                    //printf formats the decimal to 2.dp. \n adds a new line, and fahrenheitTemp is the value that is used in the format
-                    promptEnterToContinue(menuSc); //Method that uses the same scanner, to prompt user input
-                    break;
+                switch (input) {
+                    case 1: //Temperature Conversion Method
+                        TemperatureConversion temperatureConversion = new TemperatureConversion();
+                        double fahrenheitTemp = temperatureConversion.celsiusToFahrenheit(currentCityWeather.getTemperature());
+                        //Uses the temperature conversion method from the temperatureConversion object created
+                        System.out.printf("Temperature in Fahrenheit: %.2fF\n", fahrenheitTemp);
+                        //printf formats the decimal to 2.dp. \n adds a new line, and fahrenheitTemp is the value that is used in the format
+                        promptEnterToContinue(menuSc); //Method that uses the same scanner, to prompt user input
+                        break;
 
-                case 2: //Another Menu to choose Weather Data from another city
-                    WeatherMenu weatherMenu = new WeatherMenu();
-                    currentCityWeather = weatherMenu.displayWeatherMenu(cities);
-                    //Define currentCityWeather to use as context for other methods
-                    //Calls displayWeatherMenu from the weatherMenu object
-                    //cities variable (ArrayList) is being passed as an argument into displayWeatherMenu
-                    promptEnterToContinue(menuSc);
-                    break;
+                    case 2: //Another Menu to choose Weather Data from another city
+                        WeatherMenu weatherMenu = new WeatherMenu();
+                        currentCityWeather = weatherMenu.displayWeatherMenu(cities);
+                        //Define currentCityWeather to use as context for other methods
+                        //Calls displayWeatherMenu from the weatherMenu object
+                        //cities variable (ArrayList) is being passed as an argument into displayWeatherMenu
+                        promptEnterToContinue(menuSc);
+                        break;
 
-                case 3: //Build Exit
-                    System.out.println("Exiting Program");
-                    runMenu = false; //Sets boolean to false to exit the while loop
-                    promptEnterToContinue(menuSc);
-                    break;
+                    case 3: //World Forecast
+                        WorldForecast worldForecast = new WorldForecast(cities);
+                        worldForecast.displayWorldForecast();
+                        //Calls the displayWorldForecast method from the worldForecast object
+                        promptEnterToContinue(menuSc);
+                        break;
 
-                default: //Default case
-                    System.out.println("Invalid input, Try Again");
-                    break;
+                    case 4: //Build Exit
+                        System.out.println("Exiting Program");
+                        runMenu = false; //Sets boolean to false to exit the while loop
+                        promptEnterToContinue(menuSc);
+                        break;
 
+                    default: //Default case
+                        System.out.println("Invalid input, Try Again");
+                        break;
+
+                }
+            } catch (NumberFormatException error) {
+                System.out.println("Invalid input, Try Again");
+                menuSc.nextLine();
             }
+
+            //Implemented a try-catch block to check for valid inputs, and handle any exceptions
+
         }
 
         System.out.println("Goodbye!");
