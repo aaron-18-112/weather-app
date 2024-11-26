@@ -10,6 +10,7 @@ TODO
 Implement a world forecast, pulls the daily forecast from each instance together - Inheritance
 Potentially some weather graphics (ASCI)
 Write Tests - JUnit
+Create a README.md
 
 Potential:
 Polymorphism: Depending on the type of weather data you need to handle (e.g., temperature, precipitation, wind, etc.),
