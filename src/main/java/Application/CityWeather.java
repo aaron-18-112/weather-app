@@ -54,7 +54,7 @@ public class CityWeather extends BasicWeather {
         System.out.printf("Forecast\t: %s%n", getForecast());
     }
 
-    public void displayWeatherGraphics () {
+    public void displayWeatherGraphics() {
         switch (getDescription().toLowerCase()) {
             case "sunny":
                 System.out.println("    \\   /");
