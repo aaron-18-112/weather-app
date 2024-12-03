@@ -1,4 +1,4 @@
-package MMU;
+package Application;
 
 //CityWeather class models basic weather for specific cities including:
 //Extends BasicWeather class which contains information about the city name and forecast

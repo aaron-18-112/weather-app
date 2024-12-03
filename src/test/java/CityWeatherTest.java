@@ -1,9 +1,9 @@
-import MMU.CityWeather;
-import MMU.TemperatureConversion;
+import Application.CityWeather;
+import Application.TemperatureConversion;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CItyWeatherTest {
+public class CityWeatherTest {
 
     // Test the creation of a CityWeather object with valid data
     @Test
