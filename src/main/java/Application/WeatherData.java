@@ -1,4 +1,4 @@
-package MMU;
+package Application;
 
 import java.util.ArrayList;
 import java.util.List;

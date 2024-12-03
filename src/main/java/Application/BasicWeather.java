@@ -1,4 +1,4 @@
-package MMU;
+package Application;
 
 public class BasicWeather {
 

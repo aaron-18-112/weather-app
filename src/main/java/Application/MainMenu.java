@@ -1,4 +1,4 @@
-package MMU;
+package Application;
 
 import java.util.List;
 import java.util.Scanner;
@@ -7,7 +7,7 @@ public class MainMenu {
 
     //Method to call the menu options
     //This method is a static as it needs to be called often
-    private static void showMenuOptions(boolean worldForecastDisplayed) {
+    public static void showMenuOptions(boolean worldForecastDisplayed) {
         System.out.println("Would you like to:");
         if (!worldForecastDisplayed) {
             System.out.println("1. Convert the temperature to Fahrenheit");
@@ -20,9 +20,33 @@ public class MainMenu {
 
     //Method to prompt users to tap enter
     //This method is a static as it needs to be called often
-    private static void promptEnterToContinue(Scanner scanner) {
+    public static void promptEnterToContinue(Scanner scanner) {
         System.out.println("Press enter to continue");
         scanner.nextLine();
+    }
+
+    public double celsiusToFahrenheit(double celsius) {
+        double roundedCelsius = Math.round(celsius * 100.00) / 100.00; //Rounds the temperature to 2dp
+        return (roundedCelsius * 9.0 / 5) + 32; //Conversion from Celsius to Fahrenheit
+    }
+
+    public CityWeather displayWeatherMenu(List<CityWeather> cities, Scanner weatherMenuSc) {
+
+        System.out.println("Which city would you like to see weather data for?");
+        String cityName = weatherMenuSc.nextLine();
+
+        //Using an if-else statement for scalability of data
+
+        for (CityWeather cityWeather : cities) {
+            if (cityWeather.getCityName().equalsIgnoreCase(cityName)) {
+                cityWeather.displayWeather();
+                return cityWeather;
+            }
+        }
+
+        System.out.println("No data found for this city, Please try again.");
+        return displayWeatherMenu(cities, weatherMenuSc); // Recurse if invalid city name
+
     }
 
     public void displayMenu(List<CityWeather> cities, CityWeather currentCityWeather) {
@@ -44,8 +68,7 @@ public class MainMenu {
                 switch (input) {
                     case 1: //Temperature Conversion Method
                         if (!worldForecastDisplayed) {
-                            TemperatureConversion temperatureConversion = new TemperatureConversion();
-                            double fahrenheitTemp = temperatureConversion.celsiusToFahrenheit(currentCityWeather.getTemperature());
+                            double fahrenheitTemp = celsiusToFahrenheit(currentCityWeather.getTemperature());
                             //Uses the temperature conversion method from the temperatureConversion object created
                             System.out.printf("Temperature in Fahrenheit: %.2fF\n", fahrenheitTemp);
                             //printf formats the decimal to 2.dp. \n adds a new line, and fahrenheitTemp is the value that is used in the format
@@ -56,12 +79,11 @@ public class MainMenu {
                         } //if-else to ensure this option isn't called after the world forecast is displayed
                         break;
 
-                    case 2: //Another Menu to choose Weather Data from another city
-                        WeatherMenu weatherMenu = new WeatherMenu();
-                        currentCityWeather = weatherMenu.displayWeatherMenu(cities);
+                    case 2:
+                        currentCityWeather = displayWeatherMenu(cities, menuSc);
                         worldForecastDisplayed = false;
                         //Define currentCityWeather to use as context for other methods
-                        //Calls displayWeatherMenu from the weatherMenu object
+                        //Calls displayWeatherMenu
                         //cities variable (ArrayList) is being passed as an argument into displayWeatherMenu
                         promptEnterToContinue(menuSc);
                         break;

@@ -3,7 +3,7 @@ plugins {
     application
 }
 
-group = "MMU"
+group = "Application"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -21,12 +21,12 @@ tasks.test {
 
 application {
     // Specify the main class without the file extension
-    mainClass.set("MMU.WeatherApp") // Adjusted to the correct package and class name
+    mainClass.set("Application.WeatherApp") // Adjusted to the correct package and class name
 }
 
 tasks.jar {
     manifest {
-        attributes["Main-Class"] = "MMU.WeatherApp" // Specify the main class in the manifest
+        attributes["Main-Class"] = "Application.WeatherApp" // Specify the main class in the manifest
     }
     from({
         configurations.runtimeClasspath.get().filter { it.exists() }.map { if (it.isDirectory) it else zipTree(it) }

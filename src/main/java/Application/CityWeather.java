@@ -1,4 +1,4 @@
-package MMU;
+package Application;
 
 //CityWeather class models basic weather for specific cities including:
 //Extends BasicWeather class which contains information about the city name and forecast
@@ -54,7 +54,7 @@ public class CityWeather extends BasicWeather {
         System.out.printf("Forecast\t: %s%n", getForecast());
     }
 
-    public void displayWeatherGraphics () {
+    public void displayWeatherGraphics() {
         switch (getDescription().toLowerCase()) {
             case "sunny":
                 System.out.println("    \\   /");
