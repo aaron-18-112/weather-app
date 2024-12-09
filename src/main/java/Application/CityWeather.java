@@ -64,7 +64,8 @@ public class CityWeather extends BasicWeather {
                 System.out.println("    /   \\");
                 break;
 
-            case "cloudy", "partly cloudy":
+            case "cloudy":
+            case "partly cloudy":
                 System.out.println("     .--.");
                 System.out.println("  .-(    ).");
                 System.out.println(" (___.__)__)");

@@ -12,13 +12,7 @@ public class WeatherApp {
         List<CityWeather> cities = WeatherData.cityWeatherList;
         CityWeather currentCityWeather = cities.get(0); //Displays weather data for Manchester
 
-        System.out.println("""
-                Hi! We have located your nearest major city as Manchester...
-                This is the data we have found:
-                """);
-
-        //Used a text block in order to write multi-line strings without needing to concatenate
-        // """ Encapsulates the text block
+        System.out.println("Hi! We have located your nearest major city as Manchester...\nThis is the data we have found:");
 
         currentCityWeather.displayWeather();
         //Displays the weather data for Manchester
