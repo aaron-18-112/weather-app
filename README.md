@@ -18,19 +18,39 @@ To run this project, you need to have Java installed on your machine. If you don
 The project has a gradle wrapper, so you don't need to have gradle installed on your machine.
 
 You are instructed below how to build the jar file and run the project. This is the fastest way to run the project.
-```bash
-# Clone the repository
-git clone https://github.com/aaron-18-112/weather-app.git your-repo-name
 
-# Navigate to the project directory
-cd your-repo-name
+### Windows
+1. Open the folder containing the project in Windows Explorer.
+2. Click on the address bar, type `cmd`, and press Enter. This will open a Command Prompt window in the current directory.
 
-# Build the project
-gradlew build jar
+### Mac
+1. Open Finder and navigate to the folder containing the project.
+2. Right-click on the folder and select "New Terminal at Folder" (if using iTerm, right-click and select "Open iTerm Here").
 
-# Run the project
-java -jar build/libs/WeatherApp-1.0-SNAPSHOT.jar
-```
+### Build and Run
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/aaron-18-112/weather-app.git your-repo-name
+    ```
 
+2. Navigate to the project directory:
+    ```bash
+    cd your-repo-name
+    ```
+
+3. Build the project:
+    ```bash
+    # For Windows
+    gradlew build
+
+    # For Unix-like systems (Linux, macOS)
+    ./gradlew build
+    ```
+    
+4. Run the project:
+    ```bash
+    java -jar build/libs/WeatherApp-1.0-SNAPSHOT.jar
+    ```
+    
 ## Usage
 After running the project, follow the on-screen instructions to get the weather information for your desired location.
