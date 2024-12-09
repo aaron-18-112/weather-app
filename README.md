@@ -51,6 +51,11 @@ You are instructed below how to build the jar file and run the project. This is 
     ```bash
     java -jar build/libs/WeatherApp-1.0-SNAPSHOT.jar
     ```
+
+The main class can be found in `src/main/java/Application/WeatherApp.java`.
     
 ## Usage
 After running the project, follow the on-screen instructions to get the weather information for your desired location.
+
+## Unit Tests
+The unit tests can be found in `src/test/java`.
