@@ -26,7 +26,7 @@ git clone https://github.com/aaron-18-112/weather-app.git your-repo-name
 cd your-repo-name
 
 # Build the project
-./gradlew build jar
+gradlew build jar
 
 # Run the project
 java -jar build/libs/WeatherApp-1.0-SNAPSHOT.jar
