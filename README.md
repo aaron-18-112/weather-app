@@ -6,6 +6,7 @@ A console based weather app that displays the current weather for a given locati
 ## Features
 - Display the current weather for a given location.
 - Displays a world forecast, that shows the current weather around the world.
+  
 ## Technologies
 - Java
 - Kotlin
@@ -30,3 +31,6 @@ cd your-repo-name
 # Run the project
 java -jar build/libs/WeatherApp-1.0-SNAPSHOT.jar
 ```
+
+## Usage
+After running the project, follow the on-screen instructions to get the weather information for your desired location.
