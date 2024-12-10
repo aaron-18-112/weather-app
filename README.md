@@ -40,10 +40,6 @@ You are instructed below how to build the jar file and run the project. This is 
 
 3. Build the project:
     ```bash
-    # For Windows
-    gradlew build
-
-    # For Unix-like systems (Linux, macOS)
     ./gradlew build
     ```
     
