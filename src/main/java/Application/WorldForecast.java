@@ -4,16 +4,16 @@ import java.util.List;
 
 public class WorldForecast extends BasicWeather {
 
-    private final List<CityWeather> cityWeathers;
+    private final List<CityWeather> worldForecastList;
 
-    public WorldForecast(List<CityWeather> cityWeathers) {
-        super("World Forecast", "Combined weather forecast for major cities");
-        this.cityWeathers = cityWeathers;
+    public WorldForecast(List<CityWeather> worldForecastList) {
+        super("cityName", "forecast");
+        this.worldForecastList = worldForecastList;
     }
 
     public void displayWorldForecast() {
         System.out.println("\nWorld Forecast:\n");
-        for (CityWeather cityWeather : cityWeathers) {
+        for (CityWeather cityWeather : worldForecastList) {
             cityWeather.displayBasicWeather();
             System.out.println();
 
