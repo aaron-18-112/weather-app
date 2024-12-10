@@ -1,7 +1,7 @@
 # Console Based Weather App
 
 ## Description
-A console based weather app that displays the current weather for a given location.
+A console-based weather application built with Java that provides current weather information for any location. Features include displaying local weather and a world forecast. This project uses Gradle for build automation and incorporates Java and Kotlin.
 
 ## Features
 - Display the current weather for a given location.
