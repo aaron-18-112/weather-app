@@ -5,10 +5,10 @@ import java.util.List;
 
 public class WeatherData {
 
-    //Data needs to be readily available so is statically loaded
+    // Data needs to be readily available so is statically loaded
     public static List<CityWeather> cityWeatherList = new ArrayList<>();
 
-    //Weather data for 50 major cities, which is passed into other classes
+    // Weather data for 50 major cities, which is passed into other classes
     static {
         cityWeatherList.add(new CityWeather("Manchester", 7.7, 85, "Foggy", "Chilly and foggy tomorrow"));
         cityWeatherList.add(new CityWeather("Dubai", 35.5, 20, "Sunny", "Hot and dry conditions tomorrow"));
