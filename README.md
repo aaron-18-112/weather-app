@@ -70,7 +70,7 @@ The main class can be found in [`src/main/java/Application/WeatherApp.java`](src
     # For Windows - Command Prompt
     gradlew test
     
-    # For Unix-like systems (Linux, macOS) or a terminal in the IDE
+    # For Unix-like systems (Linux, macOS) OR a terminal in the IDE
     ./gradlew test
    ```
 The unit tests can be found in [`src/test/java`](src/test/java).
