@@ -8,8 +8,8 @@ A console-based weather application built with Java that provides current weathe
 - Displays a world forecast, that shows the current weather around the world.
   
 ## Technologies
-- **Java** - Main Application
-- **Kotlin** - Build Scripts for Gradle
+- **Java** - [Main Application](src/main/java/Application)
+- **Kotlin** - [Build Script for Gradle](build.gradle.kts)
 - **Gradle** - Build Tool
 
 ## Setup
@@ -48,15 +48,14 @@ You are instructed below how to build the jar file and run the project. This is 
     java -jar build/libs/WeatherApp-1.0-SNAPSHOT.jar
     ```
 
-The main class can be found in `src/main/java/Application/WeatherApp.java`.
-    
-## Usage
-After running the project, follow the on-screen instructions to get the weather information for your desired location.
+The main class can be found in [`src/main/java/Application/WeatherApp.java`](src/main/java/Application/WeatherApp.java).
 
 ## Unit Tests
-The unit tests can be found in `src/test/java`.
-
 **To run the tests:**
 ```bash
 ./gradlew test
 ```
+The unit tests can be found in [`src/test/java`](src/test/java).
+
+## Usage
+After running the project, follow the on-screen instructions to get the weather information for your desired location.
