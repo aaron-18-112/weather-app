@@ -63,7 +63,7 @@ The main class can be found in [`src/main/java/Application/WeatherApp.java`](src
 
 ## Unit Tests
 
-**To run the tests:**
+**Run** the unit tests:
 
 ```bash
 ./gradlew test
