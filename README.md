@@ -1,16 +1,16 @@
 # Console Based Weather App
 
 ## Description
-A console-based weather application built with Java that provides current weather information for any location. Features include displaying local weather and a world forecast. This project uses Gradle for build automation and incorporates Java and Kotlin.
+A console-based weather application built with Java that provides current weather information for any location. Features include displaying local weather and a world forecast. This project uses Gradle for build automation.
 
 ## Features
 - Display the current weather for a given location.
 - Displays a world forecast, that shows the current weather around the world.
   
 ## Technologies
-- Java
-- Kotlin
-- Gradle
+- **Java** - Main Application
+- **Kotlin** - Build Scripts for Gradle
+- **Gradle** - Build Tool
 
 ## Setup
 To run this project, you need to have Java installed on your machine. If you don't have Java installed, you can download it from [here](https://www.java.com/en/download/).
@@ -28,22 +28,22 @@ You are instructed below how to build the jar file and run the project. This is 
 2. Right-click on the folder and select "New Terminal at Folder" (if using iTerm, right-click and select "Open iTerm Here").
 
 ### Build and Run
-1. Clone the repository:
+1. **Clone** the repository:
     ```bash
     git clone https://github.com/aaron-18-112/weather-app.git your-repo-name
     ```
 
-2. Navigate to the project directory:
+2. **Navigate** to the project directory:
     ```bash
     cd your-repo-name
     ```
 
-3. Build the project:
+3. **Build** the project:
     ```bash
     ./gradlew build jar
     ```
     
-4. Run the project:
+4. **Run** the project:
     ```bash
     java -jar build/libs/WeatherApp-1.0-SNAPSHOT.jar
     ```
@@ -55,3 +55,8 @@ After running the project, follow the on-screen instructions to get the weather 
 
 ## Unit Tests
 The unit tests can be found in `src/test/java`.
+
+**To run the tests:**
+```bash
+./gradlew test
+```
